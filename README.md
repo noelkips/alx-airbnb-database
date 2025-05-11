@@ -84,6 +84,6 @@ This document outlines the core database schema for an Airbnb-style booking plat
 
 ## 📐 Diagram
 
-![Entity Relationship Diagram](requirements.png)
+![Entity Relationship Diagram](ERD/requirements.png)
 
 ---
