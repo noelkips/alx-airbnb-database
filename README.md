@@ -98,7 +98,9 @@ CREATE TABLE users (
 );
 
 CREATE INDEX idx_users_email ON users(email);
-
+```
+# PROPERTIES
+```
 CREATE TABLE properties (
     property_id UUID PRIMARY KEY,
     host_id UUID NOT NULL,
@@ -110,7 +112,9 @@ CREATE TABLE properties (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (host_id) REFERENCES users(user_id)
 );
-
+```
+# Bookings
+```
 CREATE TABLE bookings (
     booking_id UUID PRIMARY KEY,
     property_id UUID NOT NULL,
@@ -123,7 +127,9 @@ CREATE TABLE bookings (
     FOREIGN KEY (property_id) REFERENCES properties(property_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
-
+```
+# Payments
+```
 CREATE TABLE payments (
     payment_id UUID PRIMARY KEY,
     booking_id UUID NOT NULL,
@@ -132,7 +138,9 @@ CREATE TABLE payments (
     payment_method VARCHAR(20) CHECK (payment_method IN ('credit_card', 'paypal', 'stripe')) NOT NULL,
     FOREIGN KEY (booking_id) REFERENCES bookings(booking_id)
 );
-
+```
+# Reviews
+```
 CREATE TABLE reviews (
     review_id UUID PRIMARY KEY,
     property_id UUID NOT NULL,
@@ -144,7 +152,7 @@ CREATE TABLE reviews (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 ```
-#messages
+# messages
 ```
 CREATE TABLE messages (
     message_id UUID PRIMARY KEY,
