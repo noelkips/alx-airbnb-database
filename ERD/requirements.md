@@ -1,1 +1,8 @@
-#AirBnB CLONE DATABASE
+# Airbnb Clone – Database Design
+---
+
+## 📐 Diagram
+
+![Entity Relationship Diagram](requirements.png)
+
+---
