@@ -12,12 +12,13 @@ SELECT
 FROM 
     bookings
 INNER JOIN 
-    users ON bookings.user_id = users.id;
+    users ON bookings.user_id = users.id
+ORDER BY
+    bookings.id;
 
 /*
 Left Join
 */
-
 SELECT 
     properties.id AS property_id,
     properties.name AS property_name,
@@ -27,8 +28,9 @@ SELECT
 FROM 
     properties
 LEFT JOIN 
-    reviews ON properties.id = reviews.property_id;
-
+    reviews ON properties.id = reviews.property_id
+ORDER BY
+    properties.id;
 
 /*
 Full OUTER Join
@@ -42,4 +44,6 @@ SELECT
 FROM 
     users
 FULL OUTER JOIN 
-    bookings ON users.id = bookings.user_id;
+    bookings ON users.id = bookings.user_id
+ORDER BY
+    users.id;
